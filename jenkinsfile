@@ -1,17 +1,17 @@
 node{
 def mavenHome = tool name: "Maven 3.9.4"
-stage('CheckOutCode'){
+/*stage('CheckOutCode'){
 git branch: 'development', credentialsId: 'a747cef0-3286-493f-aefc-dca6520e93e2', url: 'https://github.com/vinaykarthik-aug2023/maven-web-application.git'
 }
 
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
-}
+}*/
 
-/*stage('ExecuteSonarQubeReport'){
+stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
-stage('UploadArtifcatsInNexus'){
+/*stage('UploadArtifcatsInNexus'){
 sh "${mavenHome}/bin/mvn clean deploy"
 }
 stage('DeployApplicatinInTomcat'){
